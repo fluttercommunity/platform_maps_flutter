@@ -25,6 +25,8 @@ class PlatformMap extends StatelessWidget {
     this.polygons = const <Polygon>{},
     this.polylines = const <Polyline>{},
     this.circles = const <Circle>{},
+    this.googleMapsStyle,
+    this.googleMapsCloudMapId,
     this.onCameraMoveStarted,
     this.onCameraMove,
     this.onCameraIdle,
@@ -189,6 +191,12 @@ class PlatformMap extends StatelessWidget {
   /// When this set is empty, the map will only handle pointer events for gestures that
   /// were not claimed by any other gesture recognizer.
   final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
+
+  /// The style of the map. This is only supported for google maps.
+  final String? googleMapsStyle;
+
+  /// The cloud map id of the map. This is only supported for google maps.
+  final String? googleMapsCloudMapId;
 
   final PlatformMapsPlatformWidget _platform;
 

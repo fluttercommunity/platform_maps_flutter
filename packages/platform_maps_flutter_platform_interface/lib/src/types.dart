@@ -9,6 +9,7 @@ export 'types/info_window.dart';
 export 'types/joint_type.dart';
 export 'types/lat_lng.dart';
 export 'types/map_type.dart';
+export 'types/map_colorscheme.dart';
 export 'types/marker.dart';
 export 'types/min_max_zoom_preference.dart';
 export 'types/platform_maps_platform_widget_creation_params.dart';

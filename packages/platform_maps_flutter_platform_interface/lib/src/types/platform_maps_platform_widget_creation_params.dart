@@ -16,6 +16,7 @@ class PlatformMapsPlatformWidgetCreationParams {
     this.gestureRecognizers = const <Factory<OneSequenceGestureRecognizer>>{},
     this.compassEnabled = true,
     this.mapType = MapType.normal,
+    this.mapColorScheme = MapColorScheme.system,
     this.minMaxZoomPreference = MinMaxZoomPreference.unbounded,
     this.rotateGesturesEnabled = true,
     this.scrollGesturesEnabled = true,
@@ -24,12 +25,15 @@ class PlatformMapsPlatformWidgetCreationParams {
     this.tiltGesturesEnabled = true,
     this.myLocationEnabled = false,
     this.myLocationButtonEnabled = false,
+    this.insetsLayoutMarginsFromSafeArea = false,
     this.padding = const EdgeInsets.all(0),
     this.trafficEnabled = false,
     this.markers = const <Marker>{},
     this.polygons = const <Polygon>{},
     this.polylines = const <Polyline>{},
     this.circles = const <Circle>{},
+    this.googleMapsStyle,
+    this.googleMapsCloudMapId,
     this.onCameraMoveStarted,
     this.onCameraMove,
     this.onCameraIdle,
@@ -50,6 +54,9 @@ class PlatformMapsPlatformWidgetCreationParams {
 
   /// Type of map tiles to be rendered.
   final MapType mapType;
+
+  /// The colorscheme to be used when the map is on apple maps. There is no support for darkmode on google maps yet.
+  final MapColorScheme mapColorScheme;
 
   /// Preferred bounds for the camera zoom level.
   ///
@@ -156,6 +163,16 @@ class PlatformMapsPlatformWidgetCreationParams {
 
   /// Enables or disables the traffic layer of the map
   final bool trafficEnabled;
+
+  /// A Boolean value indicating whether the view's layout margins are updated
+  /// automatically to reflect the safe area.
+  final bool insetsLayoutMarginsFromSafeArea;
+
+  /// The style of the map. This is only supported for google maps.
+  final String? googleMapsStyle;
+
+  /// The cloud map id of the map. This is only supported for google maps.
+  final String? googleMapsCloudMapId;
 
   /// Which gestures should be consumed by the map.
   ///

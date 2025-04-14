@@ -145,6 +145,12 @@ class _PlatformMap extends StatefulWidget {
   /// Enables or disables the traffic layer of the map
   bool get trafficEnabled => params.trafficEnabled;
 
+  /// The optional style to be used for the map. See https://developers.google.com/maps/documentation/android-sdk/styling for more details.
+  String? get googleMapsStyle => params.googleMapsStyle;
+
+  /// The optional mapId to be used for the map. See https://developers.google.com/maps/documentation/android-sdk/cloud-based-map-styling for more details.
+  String? get googleMapsCloudMapId => params.googleMapsCloudMapId;
+
   /// Which gestures should be consumed by the map.
   ///
   /// It is possible for other gesture recognizers to be competing with the map on pointer
@@ -188,6 +194,8 @@ class _PlatformMapState extends State<_PlatformMap> {
       onTap: _onTap,
       onLongPress: _onLongPress,
       trafficEnabled: widget.trafficEnabled,
+      cloudMapId: widget.googleMapsCloudMapId,
+      style: widget.googleMapsStyle,
       minMaxZoomPreference:
           widget.minMaxZoomPreference.googleMapsZoomPreference,
     );
